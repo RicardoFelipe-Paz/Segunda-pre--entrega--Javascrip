@@ -39,7 +39,7 @@ function calcularvoloumen (cuerpo) {
     }
     else if (cuerpo == "cono") { //Cono
         
-    altura = prompt ("Ingrese la altura del cilindro: \nRecuerde que los valores deben ser expresados en metros");
+    altura = prompt ("Ingrese la altura del cono: \nRecuerde que los valores deben ser expresados en metros");
     radio = prompt ("Ingrese el valor del radio de la base del cono: \n")
         return tercio*pi*radio**2*altura;
 
