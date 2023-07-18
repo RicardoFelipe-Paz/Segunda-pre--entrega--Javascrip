@@ -11,6 +11,7 @@ let figura = 0;
 let volumen = 0;
 let cuerpo = " ";
 let resultado = 0;
+let Historial = [];
 
 function calcularvoloumen (cuerpo) {
 
@@ -54,8 +55,9 @@ do {
     cuerpo = cuerpo.toLowerCase();
 
     resultado = calcularvoloumen (cuerpo);
-
     alert ("El volumen calculado es: " + resultado + " m3");
+    
+    Historial = Historial.push(resultado);
 
 
 } while(1);
