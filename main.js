@@ -11,7 +11,16 @@ let figura = 0;
 let volumen = 0;
 let cuerpo = " ";
 let resultado = 0;
-let Historial = [];
+let evento = 0;
+let historial = [];
+
+function guardarenhistorial (evento){
+    historial = historial.push (evento);
+}
+
+function mostrarhistorial (){
+    console.log (historial);
+}
 
 function calcularvoloumen (cuerpo) {
 
@@ -44,20 +53,28 @@ function calcularvoloumen (cuerpo) {
     radio = prompt ("Ingrese el valor del radio de la base del cono: \n")
         return tercio*pi*radio**2*altura;
 
-    } else {
+    } else if (cuerpo == "historial") {
+        mostrarhistorial ();
+
+    }
+    
+    else {
         alert ("Por favor elija un cuerpo de la lista.")
     }
 };
 
 do {
 
-    cuerpo = prompt("A continuacion se muestran una lista de figuras para calcular su volumen, por favor elija la de su interes:\n 1- Cubo\n 2 - Prisma \n 3 - Cilindro\n 4 - Esfera\n 5- Cono\n");
+    cuerpo = prompt("A continuacion se muestran una lista de figuras para calcular su volumen, por favor elija la de su interes:\n 1- Cubo\n 2 - Prisma \n 3 - Cilindro\n 4 - Esfera\n 5- Cono\n 0- Ver Historial");
     cuerpo = cuerpo.toLowerCase();
+   
+    if (cuerpo !=0) {
 
-    resultado = calcularvoloumen (cuerpo);
-    alert ("El volumen calculado es: " + resultado + " m3");
+        resultado = calcularvoloumen (cuerpo);
+        alert ("El volumen calculado es: " + resultado + " m3");
+    }
+       
+    guardarenhistorial (resultado);
     
-    Historial = Historial.push(resultado);
-
 
 } while(1);
