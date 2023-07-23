@@ -1,4 +1,22 @@
+
+const pi = 3.141592;
+const tercio = 0.33333;
+
+let base = 0;
+let ancho = 0;
+let altura = 0;
+let radio = 0;
+let volumen = 0;
+let cuerpo = " ";
+let resultado = 0;
+let evento = 0;
+let historial = [];
+
 function calcularvoloumen (cuerpo) {
+
+      cuerpo = prompt("A continuacion se muestran una lista de figuras para calcular su volumen, por favor elija la de su interes:\n 1- Cubo\n 2 - Prisma \n 3 - Cilindro\n 4 - Esfera\n 5- Cono\n 0- Ver Historial");
+      cuerpo = cuerpo.toLowerCase();
+     
 
     if (cuerpo == "cubo") { //Cubo
 
@@ -29,16 +47,21 @@ function calcularvoloumen (cuerpo) {
        radio = prompt ("Ingrese el valor del radio de la base del cono: \n")
        return tercio*pi*radio**2*altura;
 
-    }else {
+    }else if (cuerpo == "historial") {
        
-        alert ("Por favor elija un cuerpo de la lista.")
+        mostrarhistorial ();
+
+    } else {
+      alert ("Por favor elija un cuerpo de la lista.")
     }
 };
+
 
 function guardarenhistorial (evento){
     historial = historial.push (evento);
 }
 
 function mostrarhistorial (){
-    alert (historial);
+    
+   prompt (historial);
 }
